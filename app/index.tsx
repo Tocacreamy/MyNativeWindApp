@@ -4,9 +4,13 @@ import { Text, TouchableOpacity, View } from "react-native";
 import { Image } from "react-native";
 import { TextInput } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { MagnifyingGlassIcon } from "react-native-heroicons/outline";
+import {
+  CalendarDaysIcon,
+  MagnifyingGlassIcon,
+} from "react-native-heroicons/outline";
 import { MapPinIcon } from "react-native-heroicons/solid";
 import { useState } from "react";
+import { ScrollView, GestureResponderHandlers } from "react-native";
 
 export default function Index() {
   const [showSearch, setShowSearch] = useState(false);
@@ -85,46 +89,140 @@ export default function Index() {
             </Text>
           </Text>
 
-            {/* weatherimage */}
-            <View className="flex-row justify-center">
-              <Image
-              source={require('../assets/images/weather/storm.png')}
+          {/* weatherimage */}
+          <View className="flex-row justify-center">
+            <Image
+              source={require("../assets/images/weather/storm.png")}
               className="w-60 h-60 "
-              />
-            </View>
+            />
+          </View>
 
-            {/* degree celcius */}
-            <View className="space-y-2">
-              <Text className="text-center font-bold text-white text-6xl ml-5 ">
-                23&#176;
-              </Text>
-              <Text className="text-center text-white text-xl tracking-widest">
-                Partly cloudy
-              </Text>
-            </View>
-          
+          {/* degree celcius */}
+          <View className="space-y-2">
+            <Text className="text-center font-bold text-white text-6xl ml-5 ">
+              23&#176;
+            </Text>
+            <Text className="text-center text-white text-xl tracking-widest">
+              Partly cloudy
+            </Text>
+          </View>
+
           {/* other stats */}
           <View className="flex-row justify-between mx-4">
             <View className="flex-row space-x-2 items-center">
-              <Image source={require('../assets/images/weather/windy weather.png')} className="h-6 w-6"/>
+              <Image
+                source={require("../assets/images/weather/windy weather.png")}
+                className="h-6 w-6"
+              />
               <Text className="text-white font-semibold text-base">22km</Text>
             </View>
 
             <View className="flex-row space-x-2 items-center">
-              <Image source={require('../assets/images/weather/windy weather.png')} className="h-6 w-6"/>
+              <Image
+                source={require("../assets/images/weather/windy weather.png")}
+                className="h-6 w-6"
+              />
               <Text className="text-white font-semibold text-base">23%</Text>
             </View>
 
             <View className="flex-row space-x-2 items-center">
-              <Image source={require('../assets/images/weather/windy weather.png')} className="h-6 w-6"/>
-              <Text className="text-white font-semibold text-base">6:30 AM</Text>
+              <Image
+                source={require("../assets/images/weather/windy weather.png")}
+                className="h-6 w-6"
+              />
+              <Text className="text-white font-semibold text-base">
+                6:30 AM
+              </Text>
             </View>
-
           </View>
-          
-          {/* Forecast nextday */}
 
-          
+          {/* Forecast nextday */}
+          <View className="mb-2 space-y-3">
+            <View className="flex-row items-center mx-5 space-x-2 mb-3">
+              <CalendarDaysIcon size={22} color={"white"} />
+              <Text className="text-white text-base">Daily Forecast</Text>
+            </View>
+            <ScrollView
+              horizontal
+              contentContainerStyle={{ paddingHorizontal: 15 }}
+              showsHorizontalScrollIndicator={false}
+            >
+              {/* ================ */}
+              <View
+                className="flex justify-content items-center w-24 rounded-3xl py-3 space-y-3 mr-4"
+                style={{ backgroundColor: "rgba(192, 192, 192, 0.2)" }}
+              >
+                <Image
+                  source={require("../assets/images/weather/snowy sunny day.png")}
+                  className="h-11 w-11"
+                />
+                <Text className="text-white ">Monday</Text>
+                <Text className="text-white text-xl font-bold">13&#176;</Text>
+              </View>
+
+              <View
+                className="flex justify-content items-center w-24 rounded-3xl py-3 space-y-3 mr-4"
+                style={{ backgroundColor: "rgba(192, 192, 192, 0.2)" }}
+              >
+                <Image
+                  source={require("../assets/images/weather/snowy sunny day.png")}
+                  className="h-11 w-11"
+                />
+                <Text className="text-white ">Monday</Text>
+                <Text className="text-white text-xl font-bold">13&#176;</Text>
+              </View>
+
+              <View
+                className="flex justify-content items-center w-24 rounded-3xl py-3 space-y-3 mr-4"
+                style={{ backgroundColor: "rgba(192, 192, 192, 0.2)" }}
+              >
+                <Image
+                  source={require("../assets/images/weather/snowy sunny day.png")}
+                  className="h-11 w-11"
+                />
+                <Text className="text-white ">Monday</Text>
+                <Text className="text-white text-xl font-bold">13&#176;</Text>
+              </View>
+
+              <View
+                className="flex justify-content items-center w-24 rounded-3xl py-3 space-y-3 mr-4"
+                style={{ backgroundColor: "rgba(192, 192, 192, 0.2)" }}
+              >
+                <Image
+                  source={require("../assets/images/weather/snowy sunny day.png")}
+                  className="h-11 w-11"
+                />
+                <Text className="text-white ">Monday</Text>
+                <Text className="text-white text-xl font-bold">13&#176;</Text>
+              </View>
+
+              <View
+                className="flex justify-content items-center w-24 rounded-3xl py-3 space-y-3 mr-4"
+                style={{ backgroundColor: "rgba(192, 192, 192, 0.2)" }}
+              >
+                <Image
+                  source={require("../assets/images/weather/snowy sunny day.png")}
+                  className="h-11 w-11"
+                />
+                <Text className="text-white ">Monday</Text>
+                <Text className="text-white text-xl font-bold">13&#176;</Text>
+              </View>
+
+              <View
+                className="flex justify-content items-center w-24 rounded-3xl py-3 space-y-3 mr-0"
+                style={{ backgroundColor: "rgba(192, 192, 192, 0.2)" }}
+              >
+                <Image
+                  source={require("../assets/images/weather/snowy sunny day.png")}
+                  className="h-11 w-11"
+                />
+                <Text className="text-white ">Monday</Text>
+                <Text className="text-white text-xl font-bold">13&#176;</Text>
+              </View>
+              {/* ============ */}
+              
+            </ScrollView>
+          </View>
         </View>
       </SafeAreaView>
     </View>
